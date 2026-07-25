@@ -1276,3 +1276,8 @@ Exit:
 		LeaveCriticalSection(&gLogCritSec);
 	}
 }
+void insecure_test() {
+    char buffer[10];
+    // Uso inseguro: strcpy no valida el tamaño
+    strcpy(buffer, "Esta cadena es demasiado larga para el buffer");
+}
