@@ -83,15 +83,10 @@ jobs:
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
     
-    # Configura Visual Studio Build Tools para que cl.exe esté disponible
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.1
-      
-    - name: Setup Developer Command Prompt
-      shell: cmd
-      run: |
-             call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-
+    # Configura MSVC automáticamente
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+    
     - name: Build project
       if: matrix.build-mode == 'manual'
       shell: cmd
