@@ -98,3 +98,12 @@ jobs:
       uses: github/codeql-action/analyze@v4
       with:
         category: "/language:${{matrix.language}}"
+       
+    - name: Upload DLL artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: PassFiltEx-dll
+        path: |
+          PassFiltEx.dll
+          PassFiltEx.lib
+          PassFiltEx.exp
