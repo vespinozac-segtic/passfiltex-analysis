@@ -93,7 +93,7 @@ jobs:
       shell: cmd
       run: |
              rc PassFiltEx.rc
-             cl /LD PassFiltEx.c PassFiltEx.res /Fe:PassFiltEx.dll
+             cl /LD PassFiltEx.c PassFiltEx.res /Fe:PassFiltEx.dll /DEBUG
          
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
