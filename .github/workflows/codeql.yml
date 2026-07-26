@@ -92,7 +92,8 @@ jobs:
       if: matrix.build-mode == 'manual'
       shell: cmd
       run: |
-             cl /LD PassFiltEx.c PassFiltEx.rc /Fe:PassFiltEx.dll
+             rc PassFiltEx.rc
+             cl /LD PassFiltEx.c PassFiltEx.res /Fe:PassFiltEx.dll
          
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
